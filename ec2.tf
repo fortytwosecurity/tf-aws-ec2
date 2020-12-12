@@ -11,7 +11,7 @@ resource "aws_iam_instance_profile" "iam_profile" {
 #CLOUD INIT
 data "template_file" "cloud_init" {
   template = file(
-    "../../../../tf-aws-cloud-init/${var.cloud_init_template_prefix}_cloud_init_${var.cloud_init_distro}.tpl",
+    "${path.cwd}/tf-aws-cloud-init/${var.cloud_init_template_prefix}_cloud_init_${var.cloud_init_distro}.tpl",
   )
 
   vars = {
